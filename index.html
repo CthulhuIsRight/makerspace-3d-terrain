@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Printing Scale Models of Landmarks (Mount Rainier)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Light grey background */
+            color: #333; /* Dark grey text */
+        }
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: #ffffff; /* White content background */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50; /* Dark blue-grey */
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3498db; /* Blue accent */
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #3498db; /* Blue for phase titles */
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #2980b9; /* Slightly darker blue for step titles */
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        ol, ul {
+            margin-bottom: 15px;
+            padding-left: 20px; /* Indent lists */
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        code {
+            background-color: #e8e8e8; /* Light grey for code blocks */
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            color: #c7254e; /* Pinkish red for code text */
+        }
+        .note {
+            background-color: #fff3cd; /* Light yellow for notes */
+            border-left: 5px solid #ffeeba; /* Yellow border for notes */
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .example {
+            font-style: italic;
+            color: #555; /* Grey for examples */
+        }
+        a {
+            color: #3498db; /* Blue for links */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        strong {
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Step-by-Step Guide: 3D Printing a Scale Model of Mount Rainier</h1>
+        <p>
+            This project-based guide is designed for Pierce College geology courses and focuses on modeling height map topology using 3D printing. You'll learn how to generate a 3D printable STL file of a real-world landmark (like Mount Rainier in this tutorial's case) from elevation data, prepare it in slicer software, and produce a physical model. This hands-on process helps visualize geological features and topography for educational purposes.
+        </p>
+        <h2>Key Skills This Project Uses</h2>
+        <ul>
+            <li>Creating Physical Models to Visualize Geological Concepts</li>
+            <li>Utilizing Maker Space Resources</li>
+            <li>3D Modeling & Terrain Generation</li>
+            <li>3D Printing & Slicer Software</li>
+            <li>Model Preparation & Scaling</li>
+            <li>3D Print Post-Processing & Finishing</li>
+        </ul>
+        <h2>Phase 1: Generating the 3D Model (STL) with Terrain2STL</h2>
+        <ol>
+            <li>
+                <h3>Choose Your Landmark:</h3>
+                <ul>
+                    <li>Decide on the geographical feature you want to 3D print.</li>
+                    <li class="example">Example: Mount Rainier.</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Access Terrain2STL:</h3>
+                <ul>
+                    <li>Open your web browser and navigate to <a href="https://jthatch.com/Terrain2STL/" target="_blank">Terrain2STL</a>.</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Define the Location (Northwest Corner):</h3>
+                <ul>
+                    <li>In Terrain2STL, under the "<strong>Location</strong>" tab, specify the coordinates for the Northwest (NW) corner of the area you want to model. You can find these using online mapping tools (like Google Maps; right-click on a point to see its coordinates).</li>
+                    <li class="example">For Mount Rainier:
+                        <ul>
+                            <li>Latitude: <code>46.9690</code></li>
+                            <li>Longitude: <code>-121.9186</code></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h3>Set Model Area Dimensions (Box Size):</h3>
+                <ul>
+                    <li>Go to the "<strong>Model Details</strong>" tab.</li>
+                    <li>Define the "Box Width" (degrees of longitude) and "Box Height" (degrees of latitude) for your desired capture area.</li>
+                    <li class="note"><strong>Note on "Square" Models:</strong> To get a geographically square area on the Earth's surface (not just a square selection box on the screen), the Box Width (longitude) needs to be greater than the Box Height (latitude) by a factor related to <code>cosine(latitude_of_your_area)</code>. This is because degrees of longitude get shorter as you move away from the equator.</li>
+                    <li class="example">For your Mount Rainier model, aiming for a square footprint:
+                        <ul>
+                            <li>Box Width: <code>0.32</code> degrees</li>
+                            <li>Box Height: <code>0.22</code> degrees</li>
+                        </ul>
+                    </li>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h3>Review Other Model Detail Settings (Important!):</h3>
+                <ul>
+                    <li>Before generating, click the "<strong>Instructions / Model Details</strong>" tab in Terrain2STL and understand what each setting does. While you didn't change defaults this time, these are crucial for customizing your model, if you want to make any changes:
+                        <ul>
+                            <li><strong>Vertical Scaling/Exaggeration:</strong> Makes mountains appear more dramatic or flatter. A value of <code>1</code> is true to scale; values <code>1.5</code>-<code>2.5</code> exaggerate the terrain for a more dramatic effect, while values <code>&lt;1</code> flatten the terrain, making elevation differences less pronounced.</li>
+                            <li><strong>Base Height:</strong> Adds a solid base underneath the terrain. Essential for a printable model.</li>
+                            <li><strong>Water Drop / Sea Level:</strong> If your area includes water, this can create a flat surface for water bodies.</li>
+                            <li><strong>Model Size in Print Bed (mm):</strong> Terrain2STL can pre-scale the model, but fine-tuning in your slicer is what we will do in this tutorial.</li>
+                        </ul>
+                    </li>
+                    <li><span class="example">For this specific print, you can keep these at their default values.</span></li>
+                </ul>
+            </li>
+            <li>
+                <h3>Generate the Model:</h3>
+                <ul>
+                    <li>Once you're satisfied with your location and settings, click the "<strong>Generate Model!</strong>" button. This may take a few moments depending on the complexity and size of the area.</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Download the STL File:</h3>
+                <ul>
+                    <li>After you click the "<strong>Generate Model!</strong>" button, use the "<strong>Download</strong>" button to save the STL file to your computer.</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Extract the STL File:</h3>
+                <ul>
+                    <li>The downloaded file will be a <code>.zip</code> archive. Extract the <code>.stl</code> file from this archive.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Phase 2: Preparing the Model for Printing (Slicing)</h2>
+        <ol start="9"> <!-- Continue numbering from Phase 1 -->
+            <li>
+            <h3>Import STL into Slicer Software:</h3>
+            <ul>
+                <li>
+                <strong>What is a slicer?</strong> A slicer is a program that takes your 3D model (like the STL file you downloaded) and converts it into instructions (G-code) that your 3D printer understands. It "slices" the model into thin horizontal layers and determines how the printer will build each layer.
+                </li>
+                <li>Open <strong>PrusaSlicer</strong> (the slicer software used in this example). You can also use other slicer software such as Cura, SuperSlicer, or OrcaSlicer—the steps are similar amongst all slicer softwares.</li>
+                <li>Import the <code>.stl</code> file you just extracted.</li>
+            </ul>
+            </li>
+                <h3>Resize and Orient the Model:</h3>
+                <ul>
+                    <li>The model imported from Terrain2STL might be very large or small. Scale it to fit your printer's build volume and your desired final size.</li>
+                    <li><span class="example">Goal: 6-inch (152.4mm) square base.</span> When scaling, keep the aspect ratio locked if you want to keep the original proportions. If not, you can scale width and height separately to make the base exactly square if desired.</li>
+                    <li>Orient the model on the build plate for optimal printing (often flat on its base, with the sides parallel to the sides of the build plate).</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Set Infill Options:</h3>
+                <ul>
+                    <li>Infill determines the internal structure of your print. For terrain models, high strength isn't usually needed, as this is a display piece.</li>
+                    <li><span class="example">Your settings:</span>
+                        <ul class="example">
+                            <li>Infill Density: <code>5%</code> (saves material and time for display pieces)</li>
+                            <li>Infill Pattern: <code>Rectilinear</code> (a simple and efficient pattern)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h3>Configure Filament Settings:</h3>
+                <ul>
+                    <li>Adjust settings based on the filament you're using, key settings include:
+                        <ul>
+                            <li>Nozzle Temperature</li>
+                            <li>Bed Temperature (if your printer has a heated bed)</li>
+                        </ul>
+                    </li>
+                    <li><span class="example">PLA settings:</span>
+                        <ul>
+                            <li>Nozzle Temperature: <code>217°C</code></li>
+                            <li>Bed Temperature: <code>63°C</code></li>
+                        </ul>
+                    </li>
+                    <li class="note"><strong>Note:</strong> Always refer to your filament manufacturer's recommendations and fine-tune based on your printer. Also the folks in the makerspace who know how to deal with 3d printers can help with familiarization and saftey.</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Slice the Model:</h3>
+                <ul>
+                    <li>Click the "<strong>Slice</strong>" button in your software. The slicer converts your 3D model into a series of thin layers and generates the toolpaths (G-code commands) your printer will follow. This step also gives you an estimate of print time and material usage.</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Export G-code:</h3>
+                <ul>
+                    <li>Once slicing is complete, export the resulting G-code file.</li>
+                    <li>Save it to the storage medium your printer uses (e.g., SD card, USB drive, or send it over Wi-Fi if supported).</li>
+                    <li><span class="example">Save the G-code to an SD card to load the files into the printer.</span></li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Phase 3: 3D Printing</h2>
+        <ol start="15">
+            <li>
+                <h3>Prepare Your 3D Printer:</h3>
+                <ul>
+                    <li>Ensure your printer bed is level and clean.</li>
+                    <li>Double-check that the filament loaded is PLA, as this guide assumes PLA settings. If not, unload and load PLA filament.</li>
+                    <li>Load the correct filament (If not loaded already).</li>
+                    <li>Pre-heat the nozzle and bed to the temperatures set in your slicer.</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Start the Print:</h3>
+                <ul>
+                    <li>Load the G-code file onto your printer.</li>
+                    <li>Start the printing process.</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Monitor the Print:</h3>
+                <ul>
+                    <li>It's good practice to watch the first few layers to ensure good adhesion and print quality.</li>
+                    <li>Check on the print periodically, especially for longer prints.</li>
+                </ul>
+            </li>
+            <li>
+                <h3>Troubleshooting (As Needed):</h3>
+                <ul>
+                    <li>3D printing often involves some trial and error. If you encounter issues (e.g., poor adhesion, stringing, warping), you may need to adjust slicer settings, printer calibration, or filament type. Also there are techs in the makerspace who will be able to help you out with using 3d printers.</li>
+                    <li>
+                        <span class="example">
+                            If you run into problems (such as the print not sticking to the bed, stringing, or under-extrusion), don't worry—these are common issues for beginners and experienced users alike. Try searching for your specific problem online (e.g., "3D print not sticking to bed"), check your slicer settings, and ask for help from makerspace staff. Documenting what you tried and the results can help you troubleshoot more effectively.
+                        </span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h3>Remove from Bed & Clean Up:</h3>
+                <ul>
+                    <li>Once the print is finished and the bed has cooled (if necessary), carefully remove your model, this shouldn't take too much effort, it will peel right off.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Phase 4: Post-Processing (Optional)</h2>
+        <ol start="19">
+            <li>
+                <h3>Finishing Touches:</h3>
+                <ul>
+                    <li>You can further enhance your model by:
+                        <ul>
+                            <li><strong>Sanding:</strong> To smooth out layer lines, if any are visible.</li>
+                            <li><strong>Priming & Painting:</strong> To add color and realism.</li>
+                            <li><strong>Airbrushing:</strong> For smooth gradients and detailed color effects.</li>
+                            <li><strong>Filling Gaps:</strong> Use filler putty or epoxy to fill in small gaps or imperfections before painting.</li>
+                            <li><strong>Applying Decals:</strong> Add custom decals or labels for names, elevations, or other details.</li>
+                            <li><strong>Adding a Protective Coating:</strong> Use clear spray or varnish to protect the paint and surface.</li>
+                            <li><strong>Mounting or Framing:</strong> Attach your model to a wooden base, frame, or display case for presentation.</li>
+                            <li><strong>Labeling:</strong> Add a plaque or printed label with the landmark name and details.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>
