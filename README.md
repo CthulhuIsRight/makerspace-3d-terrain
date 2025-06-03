@@ -2,7 +2,7 @@
 
 **Author:** CthulhuIsRight
 
-[Live Project/Website Link]() (Insert here after init index.html)
+[makerspace-3d-terrain-website](https://cthulhuisright.github.io/makerspace-3d-terrain/)
 ## Introduction/Project Overview
 This project-based guide is designed for Pierce College geology courses and focuses on modeling height map topology using 3D printing. You'll learn how to generate a 3D printable STL file of a real-world landmark (like Mount Rainier, as used in this tutorial) from elevation data, prepare it in slicer software, and produce a physical model. This hands-on process helps visualize geological features and topography for educational purposes, and in this case is for students at Pierce College utilizing Makerspace resources.
 
