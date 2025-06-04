@@ -65,4 +65,4 @@ The general workflow involves:
 * **Course Syllabi:** For curriculum context (see course list above).
 
 ## License
-This project is licensed under the **MIT License**.
+This project is licensed under the [MIT License](https://github.com/CthulhuIsRight/makerspace-3d-terrain/blob/main/LICENSE).
