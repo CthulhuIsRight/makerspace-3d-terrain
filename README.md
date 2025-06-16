@@ -1,68 +1,40 @@
-# Step-by-Step Guide: 3D Printing a Scale Model of Mount Rainier
+# 3D Topographical Modeling Guide 🗺️
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Author:** CthulhuIsRight
+**Author:** [CthulhuIsRight](https://github.com/CthulhuIsRight)
 
-[makerspace-3d-terrain-website](https://cthulhuisright.github.io/makerspace-3d-terrain/)
-## Introduction/Project Overview
-This project-based guide is designed for Pierce College geology courses and focuses on modeling height map topology using 3D printing. You'll learn how to generate a 3D printable STL file of a real-world landmark (like Mount Rainier, as used in this tutorial) from elevation data, prepare it in slicer software, and produce a physical model. This hands-on process helps visualize geological features and topography for educational purposes, and in this case is for students at Pierce College utilizing Makerspace resources.
-
-The primary goal is to connect students with Pierce College's Makerspace and its capabilities.
-
-## Target Audience & Course Relevance
+This project provides a step-by-step guide for Pierce College geology students to model real-world topography using 3D printing. It bridges geological concepts with hands-on learning by connecting students with the college's **Makerspace**.
+## 🚀 Quick Links & Resources
+  * **Website:** **[makerspace-3d-terrain-website.github.io](https://cthulhuisright.github.io/makerspace-3d-terrain/)**
+  * **STL Generator:** **[Terrain2STL](https://jthatch.com/Terrain2STL/)**
+  * **Slicer Software:** **[PrusaSlicer](https://prusaslicer.net/)**
+  * **Campus Resource:** **[Pierce College Makerspace](https://www.pierce.ctc.edu/computer-labs-makerspace)**
+## 🛠️ Project Workflow
+### **Materials Required**
+  * A computer with an internet connection.
+  * A landmark you wish to model (this guide in particular uses Mount Rainier).
+  * Access to a 3D Printer (available at the **Pierce College Makerspace**).
+### **Steps Summary**
+1.  **Generate Model:** Use **Terrain2STL** to select a location and create an `.stl` file.
+2.  **Prepare File:** Import the `.stl` file into **PrusaSlicer**.
+3.  **Slice Model:** Scale, orient, and configure settings to generate the printable G-code.
+4.  **Print Model:** Send the G-code to a 3D printer and monitor the process.
+5.  **Post-Process (Optional):** Clean up the finished print and apply any desired finishing touches.
+## 📖 Project Details
+### **Learning Outcomes**
+By completing this project, students will:
+  * Create physical models to visualize complex geological concepts.
+  * Generate 3D terrain models from real-world elevation data.
+  * Operate slicer software (**PrusaSlicer**) to prepare models for printing.
+  * Gain practical experience with 3D printing workflows.
+  * Effectively utilize the resources at the Pierce College Makerspace.
+### **Target Audience & Course Relevance**
 This project is tailored for students in the following Pierce College geology courses:
-* GEOL 107 Exploring Earth Science (5 credits)
-* GEOL 112 Geohazards and Natural Disasters (5 credits)
-* GEOL& 101 Introduction to Physical Geology (5 credits)
-* GEOL& 103 Historical Geology (5 credits)
-* GEOL& 110 Environmental Geology (5 credits)
-* GEOL& 115 Geology National Parks (5 credits)
-
-## Learning Outcomes
-By completing this project, students will gain experience in:
-* Creating physical models to visualize geological concepts.
-* Utilizing Maker Space resources effectively.
-* 3D modeling and terrain generation from elevation data (e.g., using Terrain2STL).
-* 3D printing principles and operation of slicer software (e.g., Prusaslicer).
-* Model preparation, scaling, and orientation for successful printing.
-* 3D print post-processing and finishing techniques.
-
-## Features
-* Detailed step-by-step guide for creating a 3D topographical model.
-* Uses readily available online tools like Terrain2STL.
-* Focuses on practical application with common slicer software (Prusaslicer).
-* Emphasizes hands-on learning for geological education.
-* Provides guidance on utilizing Pierce College Makerspace resources, including alternative print submission methods (e.g., QR code portal).
-
-## Materials Required
-* Access to a 3D Printer (specifically from the Pierce College Maker Space).
-* A computer with internet access.
-* Slicer Software (e.g., Prusaslicer).
-* A landmark you wish to model (Mount Rainier is used as the primary example).
-
-## Process Overview
-The general workflow involves:
-1.  **Landmark Selection:** Choose a geographical feature to model (e.g., Mount Rainier).
-2.  **Data Acquisition:** Use a tool like Terrain2STL to define the location and model area, then generate and download the STL file.
-3.  **File Preparation:** Extract the STL file.
-4.  **Slicing:** Import the STL into slicer software (e.g., Prusaslicer).
-    * Resize and orient the model.
-    * Configure infill, support (if needed), and filament settings.
-    * Slice the model to generate G-code.
-5.  **Printing:**
-    * Export G-code to the 3D printer.
-    * Prepare the 3D printer (e.g., bed leveling).
-    * Start and monitor the print.
-6.  **Post-Processing:**
-    * Troubleshoot any print issues.
-    * Remove the model from the print bed and clean up any supports.
-    * Optional finishing touches (painting, smoothing).
-
-## Resources Used
-
-* **Terrain2STL:** For generating STL files from elevation data.
-* **Prusaslicer:** Slicer software for preparing models for 3D printing.
-* **Pierce College Makerspace:** For access to 3D printers and support.
-* **Course Syllabi:** For curriculum context (see course list above).
-
-## License
+  * GEOL 107: Exploring Earth Science
+  * GEOL 112: Geohazards and Natural Disasters
+  * GEOL& 101: Introduction to Physical Geology
+  * GEOL& 103: Historical Geology
+  * GEOL& 110: Environmental Geology
+  * GEOL& 115: Geology of National Parks
+### **License**
 This project is licensed under the [MIT License](https://github.com/CthulhuIsRight/makerspace-3d-terrain/blob/main/LICENSE).
