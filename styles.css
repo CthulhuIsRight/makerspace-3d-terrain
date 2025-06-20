@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light grey background */
+    color: #333; /* Dark grey text */
+}
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: #ffffff; /* White content background */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+h1 {
+    color: #2c3e50; /* Dark blue-grey */
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #3498db; /* Blue accent */
+    padding-bottom: 10px;
+}
+h2 {
+    color: #3498db; /* Blue for phase titles */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 5px;
+}
+h3 {
+    color: #2980b9; /* Slightly darker blue for step titles */
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+ol, ul {
+    margin-bottom: 15px;
+    padding-left: 20px; /* Indent lists */
+}
+li {
+    margin-bottom: 8px;
+}
+code {
+    background-color: #e8e8e8; /* Light grey for code blocks */
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    color: #c7254e; /* Pinkish red for code text */
+}
+.note {
+    background-color: #fff3cd; /* Light yellow for notes */
+    border-left: 5px solid #ffeeba; /* Yellow border for notes */
+    padding: 10px 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+.example {
+    font-style: italic;
+    color: #555; /* Grey for examples */
+}
+a {
+    color: #3498db; /* Blue for links */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+strong {
+    color: #2c3e50;
+}
+
+/* --- Styling for all expandable sections --- */
+details {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+details details { /* Style for nested details */
+        border: none;
+        border-top: 1px dashed #ddd;
+        border-radius: 0;
+        margin-left: 20px;
+}
+details > summary {
+    cursor: pointer;
+    padding: 12px 15px;
+    background-color: #f7f7f7;
+    list-style: none; /* Removes the default triangle */
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+details > summary:hover {
+    background-color: #e9e9e9;
+}
+/* Reset heading styles when inside a summary */
+details > summary h2,
+details > summary h3 {
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+}
+details > summary h2 { color: #3498db; }
+details > summary h3 { color: #2980b9; }
+
+/* Plus/minus sign indicator */
+details > summary::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 1.5em;
+    line-height: 1;
+    color: #3498db;
+    transition: transform 0.2s ease-in-out;
+}
+details[open] > summary::after {
+    content: '−';
+}
+
+/* Content container inside the details tag */
+.details-content {
+    padding: 15px 15px 15px 25px;
+    border-top: 1px solid #ddd;
+}
+/* Specific padding for nested details content */
+details details .details-content {
+    padding-left: 15px;
+}
