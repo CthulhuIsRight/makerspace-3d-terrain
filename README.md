@@ -6,6 +6,7 @@
 This project provides a step-by-step guide for Pierce College geology students to model real-world topography using 3D printing. It bridges geological concepts with hands-on learning by connecting students with the college's **Makerspace**.
 ## 🚀 Quick Links & Resources
   * **Website:** **[makerspace-3d-terrain-website.github.io](https://cthulhuisright.github.io/makerspace-3d-terrain/)**
+    - Accordion-style navigation of tutorial
   * **STL Generator:** **[Terrain2STL](https://jthatch.com/Terrain2STL/)**
   * **Slicer Software:** **[PrusaSlicer](https://prusaslicer.net/)**
   * **Campus Resource:** **[Pierce College Makerspace](https://www.pierce.ctc.edu/computer-labs-makerspace)**

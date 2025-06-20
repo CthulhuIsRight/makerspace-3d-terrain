@@ -214,7 +214,7 @@
                                     <li><strong>Vertical Scaling/Exaggeration:</strong> Makes mountains appear more dramatic or flatter. A value of <code>1</code> is true to scale; values <code>1.5</code>-<code>2.5</code> exaggerate the terrain for a more dramatic effect, while values <code>&lt;1</code> flatten the terrain, making elevation differences less pronounced.</li>
                                     <li><strong>Base Height:</strong> Adds a solid base underneath the terrain. Essential for a printable model.</li>
                                     <li><strong>Water Drop / Sea Level:</strong> If your area includes water, this can create a flat surface for water bodies.</li>
-                                    <li><strong>Model Size in Print Bed (mm):</strong> Terrain2STL can pre-scale the model, but fine-tuning in your slicer is what we will do in this tutorial.</li>
+                                    <li><strong>Model Size in Print Bed (mm):</strong> Terrain2STL can pre-scale the model.</li>
                                 </ul>
                             </li>
                             <li><span class="example">For this specific print, you can keep these at their default values.</span></li>
@@ -243,86 +243,16 @@
         </details>
         
         <details>
-            <summary><h2>Phase 2: Preparing the Model for Printing (Slicing)</h2></summary>
-            <div class="details-content">
-                <ol start="9">
-                    <li>
-                    <h3>Import STL into Slicer Software:</h3>
-                    <ul>
-                        <li>
-                        <strong>What is a slicer?</strong> A slicer is a program that takes your 3D model (like the STL file you downloaded) and converts it into instructions (G-code) that your 3D printer understands. It "slices" the model into thin horizontal layers and determines how the printer will build each layer.
-                        </li>
-                        <li>Open <strong>PrusaSlicer</strong> (the slicer software used in this example). You can also use other slicer software such as Cura, SuperSlicer, or OrcaSlicer—the steps are similar amongst all slicer softwares.</li>
-                        <li>Import the <code>.stl</code> file you just extracted.</li>
-                    </ul>
-                    </li>
-                    <li>
-                        <h3>Resize and Orient the Model:</h3>
-                        <ul>
-                            <li>The model imported from Terrain2STL might be very large or small. Scale it to fit your printer's build volume and your desired final size.</li>
-                            <li><span class="example">Goal: 6-inch (152.4mm) square base.</span> When scaling, keep the aspect ratio locked if you want to keep the original proportions. If not, you can scale width and height separately to make the base exactly square if desired.</li>
-                            <li>Orient the model on the build plate for optimal printing (often flat on its base, with the sides parallel to the sides of the build plate).</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h3>Set Infill Options:</h3>
-                        <ul>
-                            <li>Infill determines the internal structure of your print. For terrain models, high strength isn't usually needed, as this is a display piece.</li>
-                            <li><span class="example">Your settings:</span>
-                                <ul class="example">
-                                    <li>Infill Density: <code>5%</code> (saves material and time for display pieces)</li>
-                                    <li>Infill Pattern: <code>Rectilinear</code> (a simple and efficient pattern)</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h3>Configure Filament Settings:</h3>
-                        <ul>
-                            <li>Adjust settings based on the filament you're using, key settings include:
-                                <ul>
-                                    <li>Nozzle Temperature</li>
-                                    <li>Bed Temperature (if your printer has a heated bed)</li>
-                                </ul>
-                            </li>
-                            <li><span class="example">PLA settings:</span>
-                                <ul>
-                                    <li>Nozzle Temperature: <code>217°C</code></li>
-                                    <li>Bed Temperature: <code>63°C</code></li>
-                                </ul>
-                            </li>
-                            <li class="note"><strong>Note:</strong> Always refer to your filament manufacturer's recommendations and fine-tune based on your printer. Also the folks in the Makerspace who know how to deal with 3d printers can help with familiarization and saftey.</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h3>Slice the Model:</h3>
-                        <ul>
-                            <li>Click the "<strong>Slice</strong>" button in your software. The slicer converts your 3D model into a series of thin layers and generates the toolpaths (G-code commands) your printer will follow. This step also gives you an estimate of print time and material usage.</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h3>Export G-code:</h3>
-                        <ul>
-                            <li>Once slicing is complete, export the resulting G-code file.</li>
-                            <li>Save it to the storage medium your printer uses (e.g., SD card, USB drive, or send it over Wi-Fi if supported).</li>
-                            <li><span class="example">Save the G-code to an SD card to load the files into the printer.</span></li>
-                        </ul>
-                    </li>
-                </ol>
-            </div>
-        </details>
-        
-        <details>
-            <summary><h2>Phase 3: Printing Your Model</h2></summary>
+            <summary><h2>Phase 2: Printing Your Model</h2></summary>
             <div class="details-content">
                 <p>You have your G-code file ready. Now it's time to print! Choose the path that best fits your situation.</p>
             <details>
             <summary><h3>Option 1: Utilizing Makerspace Resources</h3></summary>
             <div class="details-content">
                 <div class="note">
-                This is the simplest and recommended path for most students. The Makerspace staff will handle the printing for you — you just submit your file and pick it up when it’s done.
+                This is the simplest and recommended path for most students. The Makerspace staff will handle the printing for you, just submit your file and pick it up when it’s done.
                 </div>
-                <ol start="15">
+                <ol start="1">
                 <div class="note">
                     <strong>Before you begin:</strong> Make sure you have your <code>.stl</code> file ready (From Terrain2STL) to upload before filling out the form.
                 </div>
@@ -345,72 +275,141 @@
                 <details>
                   <summary><h3>Option 2: Printing by Yourself</h3></summary>
                    <div class="details-content">
-                      <div class="note">
-                        This path is for those who have their own 3D printer or are confident operating one without supervision. You will be responsible for the entire process, including calibration and troubleshooting.
-                      </div>
-                      <ol start="15">
-                        <li>
-                          <strong>Prepare Your 3D Printer:</strong>
-                          <ul>
-                            <li>Ensure your printer bed is level and clean to promote good first-layer adhesion.</li>
-                            <li>Double-check that you have PLA filament loaded, as the slicer settings were configured for it.</li>
-                            <li>Pre-heat the nozzle and bed to the temperatures you set in PrusaSlicer (e.g., 217°C nozzle, 63°C bed).</li>
-                          </ul>
-                        </li>
-                        <li>
-                          <strong>Start the Print:</strong>
-                          <ul>
-                            <li>Load the G-code file from your SD card or drive onto your printer.</li>
-                            <li>Begin the printing process and watch the first few layers carefully to ensure everything is running smoothly.</li>
-                          </ul>
-                        </li>
-                        <li>
-                          <strong>Monitor the Print:</strong>
-                          <ul>
-                            <li>Check on your print periodically, especially for a long print. Remote monitoring apps can be useful if your printer supports them.</li>
-                          </ul>
-                        </li>
-                        <li>
-                          <strong>Troubleshooting (As Needed):</strong>
-                          <ul>
-                            <li>3D printing often involves trial and error. If you encounter issues (e.g., poor adhesion, stringing, warping), you will need to diagnose the problem.</li>
-                            <li class="example">If you run into problems, don't worry—these are common issues. Try searching for your specific problem online (e.g., "3D print not sticking to bed"), check your slicer settings, and consult online communities (like Reddit's /r/3Dprinting) or your printer's documentation. Documenting what you tried and the results can help you troubleshoot more effectively.</li>
-                          </ul>
-                        </li>
-                        <li>
-                          <strong>Remove from Bed & Clean Up:</strong>
-                          <ul>
-                            <li>Once the print is finished and the bed has cooled (if necessary), carefully remove your model. It should peel off without excessive force.</li>
-                          </ul>
-                        </li>
-                      </ol>
+                        <p>
+                        Choosing to print by yourself means you'll handle the entire 3D printing process, from preparing your digital model to operating the printer and finishing the final product. This approach gives you full control over print settings, materials, and quality, but also requires familiarity with slicing software, printer operation, and troubleshooting common issues. It's a rewarding way to learn about 3D printing and customize your results.
+                        </p>
+                    <details>
+                        <summary><h2>Phase 1: Preparing the Model for Printing (Slicing)</h2></summary>
+                        <div class="details-content">
+                            <ol start="1">
+                                <li>
+                                <h3>Import STL into Slicer Software:</h3>
+                                <ul>
+                                    <li>
+                                    <strong>What is a slicer?</strong> A slicer is a program that takes your 3D model (like the STL file you downloaded) and converts it into instructions (G-code) that your 3D printer understands. It "slices" the model into thin horizontal layers and determines how the printer will build each layer.
+                                    </li>
+                                    <li>Open <strong>PrusaSlicer</strong> (the slicer software used in this example). You can also use other slicer software such as Cura, SuperSlicer, or OrcaSlicer—the steps are similar amongst all slicer softwares.</li>
+                                    <li>Import the <code>.stl</code> file you just extracted.</li>
+                                </ul>
+                                </li>
+                                <li>
+                                    <h3>Resize and Orient the Model:</h3>
+                                    <ul>
+                                        <li><span class="example">Goal: 6-inch (152.4mm) square base.</span> When scaling, keep the aspect ratio locked if you want to keep the original proportions. If not, you can scale width and height separately to make the base exactly square if desired.</li>
+                                        <li>Orient the model on the build plate for optimal printing (often flat on its base, with the sides parallel to the sides of the build plate).</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h3>Set Infill Options:</h3>
+                                    <ul>
+                                        <li>Infill determines the internal structure of your print. For terrain models, high strength isn't usually needed, as this is a display piece.</li>
+                                        <li><span class="example">Your settings:</span>
+                                            <ul class="example">
+                                                <li>Infill Density: <code>5%</code> (saves material and time for display pieces)</li>
+                                                <li>Infill Pattern: <code>Rectilinear</code> (a simple and efficient pattern)</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h3>Configure Filament Settings:</h3>
+                                    <ul>
+                                        <li>Adjust settings based on the filament you're using, key settings include:
+                                            <ul>
+                                                <li>Nozzle Temperature</li>
+                                                <li>Bed Temperature (if your printer has a heated bed)</li>
+                                            </ul>
+                                        </li>
+                                        <li><span class="example">PLA settings:</span>
+                                            <ul>
+                                                <li>Nozzle Temperature: <code>217°C</code></li>
+                                                <li>Bed Temperature: <code>63°C</code></li>
+                                            </ul>
+                                        </li>
+                                        <li class="note"><strong>Note:</strong> Always refer to your filament manufacturer's recommendations and fine-tune based on your printer.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h3>Slice the Model:</h3>
+                                    <ul>
+                                        <li>Click the "<strong>Slice</strong>" button in your software. The slicer converts your 3D model into a series of thin layers and generates the toolpaths (G-code commands) your printer will follow. This step also gives you an estimate of print time and material usage.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h3>Export G-code:</h3>
+                                    <ul>
+                                        <li>Once slicing is complete, export the resulting G-code file.</li>
+                                        <li>Save it to the storage medium your printer uses (e.g., SD card, USB drive, or send it over Wi-Fi if supported).</li>
+                                        <li><span class="example">Save the G-code to an SD card to load the files into the printer.</span></li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </details>
+                    <details>
+                        <summary><h2>Phase 2: Printing the Model</h2></summary>
+                        <div class="details-content">
+                          <ol start="7">
+                            <li>
+                              <strong>Prepare Your 3D Printer:</strong>
+                              <ul>
+                                <li>Ensure your printer bed is level and clean to promote good first-layer adhesion.</li>
+                                <li>Double-check that you have PLA filament loaded, as the slicer settings were configured for it.</li>
+                                <li>Pre-heat the nozzle and bed to the temperatures you set in PrusaSlicer (e.g., 217°C nozzle, 63°C bed).</li>
+                              </ul>
+                            </li>
+                            <li>
+                              <strong>Start the Print:</strong>
+                              <ul>
+                                <li>Load the G-code file from your SD card or drive onto your printer.</li>
+                                <li>Begin the printing process and watch the first few layers carefully to ensure everything is running smoothly.</li>
+                              </ul>
+                            </li>
+                            <li>
+                              <strong>Monitor the Print:</strong>
+                              <ul>
+                                <li>Check on your print periodically, especially for a long print. Remote monitoring apps can be useful if your printer supports them.</li>
+                              </ul>
+                            </li>
+                            <li>
+                              <strong>Troubleshooting (As Needed):</strong>
+                              <ul>
+                                <li>3D printing often involves trial and error. If you encounter issues (e.g., poor adhesion, stringing, warping), you will need to diagnose the problem.</li>
+                                <li class="example">If you run into problems, don't worry—these are common issues. Try searching for your specific problem online (e.g., "3D print not sticking to bed"), check your slicer settings, and consult online communities (like Reddit's /r/3Dprinting) or your printer's documentation. Documenting what you tried and the results can help you troubleshoot more effectively.</li>
+                              </ul>
+                            </li>
+                            <li>
+                              <strong>Remove from Bed & Clean Up:</strong>
+                              <ul>
+                                <li>Once the print is finished and the bed has cooled (if necessary), carefully remove your model. It should peel off without excessive force.</li>
+                              </ul>
+                            </li>
+                          </ol>
+                        </div>
+                    </details>
                    </div>
                 </details>
             </div>
         </details>
 
         <details>
-            <summary><h2>Phase 4: Post-Processing (Optional)</h2></summary>
+            <summary><h2>Phase 3: Post-Processing (Optional)</h2></summary>
             <div class="details-content">
-                <ol start="20">
-                    <li>
-                        <h3>Finishing Touches:</h3>
+                <h3>Finishing Touches:</h3>
+                <ul>
+                    <li>You can further enhance your model by:
                         <ul>
-                            <li>You can further enhance your model by:
-                                <ul>
-                                    <li><strong>Sanding:</strong> To smooth out layer lines, if any are visible.</li>
-                                    <li><strong>Priming & Painting:</strong> To add color and realism.</li>
-                                    <li><strong>Airbrushing:</strong> For smooth gradients and detailed color effects.</li>
-                                    <li><strong>Filling Gaps:</strong> Use filler putty or epoxy to fill in small gaps or imperfections before painting.</li>
-                                    <li><strong>Applying Decals:</strong> Add custom decals or labels for names, elevations, or other details.</li>
-                                    <li><strong>Adding a Protective Coating:</strong> Use clear spray or varnish to protect the paint and surface.</li>
-                                    <li><strong>Mounting or Framing:</strong> Attach your model to a wooden base, frame, or display case for presentation.</li>
-                                    <li><strong>Labeling:</strong> Add a plaque or printed label with the landmark name and details.</li>
-                                </ul>
-                            </li>
+                            <li><strong>Sanding:</strong> To smooth out layer lines, if any are visible.</li>
+                            <li><strong>Priming & Painting:</strong> To add color and realism.</li>
+                            <li><strong>Airbrushing:</strong> For smooth gradients and detailed color effects.</li>
+                            <li><strong>Filling Gaps:</strong> Use filler putty or epoxy to fill in small gaps or imperfections before painting.</li>
+                            <li><strong>Applying Decals:</strong> Add custom decals or labels for names, elevations, or other details.</li>
+                            <li><strong>Adding a Protective Coating:</strong> Use clear spray or varnish to protect the paint and surface.</li>
+                            <li><strong>Mounting or Framing:</strong> Attach your model to a wooden base, frame, or display case for presentation.</li>
+                            <li><strong>Labeling:</strong> Add a plaque or printed label with the landmark name and details.</li>
                         </ul>
                     </li>
-                </ol>
+                </ul>
             </div>
         </details>
     </div>
